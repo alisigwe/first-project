@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliet's Kitchen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <section id="home">
+        <h1>Juliet's Kitchen</h1>
+        <nav>
+            <ul>
+                <li><a href="#menu">Food menu</a></li>
+                <li><a href="#hours">Opening Hours</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        </section>
+    </header>
+    <main>
+        <section id="banner">
+            <img src="html_banner_300x300.PNG" alt="banner" style="width:950px;height:auto;">
+        </section>
+        <section id="about">
+            <h2>About Juliet's Kitchen</h2>
+            <p>We serve you delicious homemade recipes that will make you always want more.</p>
+            <p>We can't wait to get your orders.</p>
+        </section>
+        <section id="menu">
+            <h2>Food Menu</h2>
+            <hr>
+            <section id="food">
+                <img src="IMG_1513.JPG" alt="food" style="width:200px;height:auto;">
+            </section>
+            <p>Rice</p>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="fried rice"> Fried rice
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="jollof rice"> Jollof rice
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="ofada rice"> Ofada rice
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="rice and stew"> Rice and stew
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="rice and sauce"> Rice and sauce
+                </label>
+            </div>
+            <hr>
+            <section id="secondfood">
+                <img src="IMG_1514.JPG" alt="food" style="width:200px;height:auto;">
+            </section>
+            <p>Swallows</p>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="fufu"> Fufu
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="eba"> Eba
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="semolina"> Semolina
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="wheat swallow"> Wheat
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="amala"> Amala
+                </label>
+            </div>
+            <hr>
+            <section id="thirdfood">
+                <img src="IMG_1515.JPG" alt="food" style="width:200px;height:auto;">
+            </section>
+            <p>Soups</p>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="nsala soup"> Nsala soup
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="bitter leaf soup"> Bitter leaf soup
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="eforiro"> Eforiro
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="egusi soup"> Egusi soup
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="okro soup"> Okro soup
+                </label>
+            </div>
+            <hr>
+            <section id="fourthfood">
+                <img src="IMG_1516.JPG" alt="food" style="width:200px;height:auto;">
+            </section>
+            <p>Others</p>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="spag"> Spag
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="yam porridge"> Yam porridge
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="ramen"> Ramen
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="burger"> Burger
+                </label>
+            </div>
+            <div class="menu-item">
+                <label>
+                    <input type="checkbox" name="food" value="abasha"> Abasha
+                </label>
+            </div>
+            <button onclick="showSelectedItems()">Order now</button>
+            <div id="selected-items"></div>
+            <script>
+                function showSelectedItems() {
+                    const checkboxes = document.querySelectorAll('input[name="food"]:checked');
+                    const selectedItems = Array.from(checkboxes).map(cb => cb.value);
+                    const selectedItemsDiv = document.getElementById('selected-items');
+                    if (selectedItems.length > 0) {
+                        selectedItemsDiv.textContent = 'You have selected: ' + selectedItems.join(', ');
+                    } else {
+                        selectedItemsDiv.textContent = 'No items selected.';
+                    }
+                }
+            </script>
+        </section>
+        <section id="hours">
+            <h2>Restaurant Opening Hours</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="day">Day</th>
+                        <th class="hours">Opening Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="day">Monday</td>
+                        <td class="hours">09:00 AM - 09:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td class="day">Tuesday</td>
+                        <td class="hours">09:00 AM - 09:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td class="day">Wednesday</td>
+                        <td class="hours">09:00 AM - 09:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td class="day">Thursday</td>
+                        <td class="hours">09:00 AM - 09:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td class="day">Friday</td>
+                        <td class="hours">09:00 AM - 10:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td class="day">Saturday</td>
+                        <td class="hours">10:00 AM - 10:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td class="day">Sunday</td>
+                        <td class="hours">10:00 AM - 08:00 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:okororegina@gmail.com">Okororegina@gmail.com</a></p>
+            <p>Phone: <a href="tel:+9034567890">+9 034 567 890</a></p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Alisigwe Juliet
+        <nav>
+            <a href="#home">Go back up</a>
+            <a href="about.html">About Me</a>
+        </nav>
+    </footer>
+</body>
+</html>
